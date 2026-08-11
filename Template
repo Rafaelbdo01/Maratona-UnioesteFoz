@@ -4,11 +4,11 @@ using namespace std;
 #define int long long
 #define pb push_back
 #define all(x) (x).begin(), (x).end()
+#define rall(x) (x).rbegin(), (x).rend()
 #define sz(x) (int)(x).size()
 #define f first
 #define s second
 #define joaobobao ios_base::sync_with_stdio(false); cin.tie(NULL)
-
 
 void solve() {
 
