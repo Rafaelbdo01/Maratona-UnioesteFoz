@@ -26,3 +26,7 @@ Problemas organizados principalmente pelas técnicas utilizadas na solução.
 ### CSES
 
 Problemas organizados de acordo com as categorias da plataforma.
+
+### Disclaimer
+Tenha em mente que dentro da pasta de um contest terá, tanto as questões que resolvi em tempo real,
+quanto as que resolvi em upsolving.
