@@ -17,27 +17,34 @@ void solve() {
     int n; cin >> n;
 
     queue<pair<int,int>> q;
-    q.push({1, 1})
+    q.push({1, 2});
 
-    int i = 1, ans = 1;
+    if(n == 1){
+        cout << 2 << endl;
+        return;
+    }
+
+    int i = 2, ans = 1;
     
     while(i <= n){
 
-        auto it = q.front();
+        auto [x, y] = q.front();
+        auto [w, z] = q.back();
 
-        if(it == a.end()){
+        if(i == y){
 
-            ans++;
-            b.insert({i, ans});
-            a.insert({ans, i});
+            q.pop();
+
+            ans = x * 3;
+            q.push({i, ans});
         }
 
-        else if(it != a.end()){
+       
 
-            ans = (a.at(i) * 3);
+        if(i != y){
 
-            b.insert({i, ans});
-            a.insert({ans, i});
+            ans = z+1;
+            q.push({i, ans});
         }
 
         i++;
