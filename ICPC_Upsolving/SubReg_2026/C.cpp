@@ -1,4 +1,4 @@
-//Link para a questão: https://codeforces.com/gym/106679/problem/C
+//Link para a questão:  https://codeforces.com/gym/106679/problem/C
 
 #include <bits/stdc++.h>
 using namespace std;
