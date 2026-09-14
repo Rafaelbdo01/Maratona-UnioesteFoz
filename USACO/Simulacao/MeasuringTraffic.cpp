@@ -23,7 +23,7 @@ void solve(){
         traffic.pb({s, x, y});
     }
 
-    pair<int,int>range = {0,1001};
+    pair<int,int>range = {0,INF};
 
     //Antes de 1
     for(int i=n-1;i>=0;i--){
@@ -32,7 +32,7 @@ void solve(){
 
         if(x == "on"){
 
-            range.first -= z;
+            range.first = max(0LL, range.first - z);
             range.second -= y;
             continue;
         }
@@ -54,7 +54,7 @@ void solve(){
 
     cout << range.first << " " << range.second << endl;
 
-    range = {0, 1001};
+    range = {0, INF};
 
     //Apos N
 
@@ -64,7 +64,7 @@ void solve(){
 
         if(x == "off"){
 
-            range.first -= z;
+            range.first = max(0LL, range.first - z);
             range.second -= y;
             continue;
         }
