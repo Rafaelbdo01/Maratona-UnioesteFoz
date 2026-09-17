@@ -10,49 +10,57 @@ using namespace std;
 #define joaobobao cin.tie(0) -> sync_with_stdio(0)
 #define INF 1e18
 
+int n, k;
+
 void solve(){
 
-    int n,k;
     cin >> n >> k;
 
     vector<int>dima(n);
 
     for(int i=0;i<n;i++) cin >> dima[i];
 
-    int ans = 0;
+    int ans = 1;
+
+    sort(dima.begin(), dima.end(), [](const auto &a, const auto &b){
+
+        return a > b;
+    });
+
+    //for(auto a : dima) cout << a << " ";
 
     for(int i=0;i<n;i++){
 
+        int menor = dima[i];
+        int maior = dima[i];
         int atual = 1;
-        vector<int> num;
-        num.pb(dima[i]);
+
+        //cout << "I = " << dima[i] << endl << "Diamonds = ";
 
         for(int j=0;j<n;j++){
 
-            if(j == i) continue;
+            if(i == j) continue;
 
-            if(abs(dima[i] - dima[j]) <= k){
-
-                bool da = true;
-
-                for(int l=0;l<num.size();l++){
-
-                    if(abs(dima[j] - num[l] > k)) {da = false; break;}
-                }
-
-                if(da){
+            if(abs(dima[j] - maior) <= k){
+                if(abs(dima[j] - menor) <= k){
 
                     atual++;
-                    num.pb(dima[j]);
+                    maior = max(maior, dima[j]);
+                    menor = min(menor, dima[j]);
+
+                    //cout << dima[j] << " ";
                 }
             }
         }
+
+        //cout << endl;
+        //cout << "Menor = " << menor << "|| Maior = " << maior << endl;
+        //cout << "Atual = " << atual << endl;
 
         ans = max(ans, atual);
     }
 
     cout << ans << endl;
-
 }
 
 signed main(){
