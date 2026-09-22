@@ -31,13 +31,15 @@ void solve(){
 
     for(int i=0;i<n-1;i++){
 
-        auto [x1,c1] = cows[i];
         auto [x2,c2] = cows[i+1];
 
         p.pb(x2 - 1);
+        p.pb(x2+1);
+        p.pb(x2);
     }
 
     int ans = INF;
+    sort(all(p));
 
     for(auto a : p){
 
