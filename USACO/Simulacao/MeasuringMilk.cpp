@@ -1,3 +1,5 @@
+#Link da questao: https://usaco.org/index.php?page=viewproblem2&cpid=761
+
 #include <bits/stdc++.h>
 using namespace std;
 #define int long long
